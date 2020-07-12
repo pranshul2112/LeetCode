@@ -1,12 +1,9 @@
 #  https://leetcode.com/problems/reverse-integer/
 
-
 # Naive Method 
-
 class Solution:
     def reverse(self, x: int) -> int:
-        flag = 0
-        res = 0
+        flag, res = 0, 0
         if x < 0:
             x -= 2 * x
             flag = 1
@@ -16,9 +13,8 @@ class Solution:
             x //= 10
         if res < - 2 ** 31 or res > 2 ** 31 - 1:
             return 0
-        if flag == 0:
-            return res
-        return -res
+        
+        return res if flag == 0 else -res
       
 # Efficent Method 
 class Solution:
